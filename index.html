@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Complete Evolution: Big Bang → Cosmic Consciousness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0f0f23 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0ff;
+            overflow-x: auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00f5ff, #0080ff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 60px;
+            color: #a0a0ff;
+            font-style: italic;
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            padding: 80px 40px;
+            overflow-x: auto;
+            overflow-y: visible;
+        }
+
+        .timeline-line {
+            position: relative;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #ff00ff 0%, 
+                #00f5ff 15%, 
+                #0080ff 30%, 
+                #00ff88 50%, 
+                #ffaa00 70%, 
+                #ff0080 85%, 
+                #8000ff 100%);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.8),
+                        0 0 40px rgba(128, 0, 255, 0.4);
+            animation: pulse 3s ease-in-out infinite;
+            min-width: 5000px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .milestone {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle, #00f5ff, #0080ff);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 245, 255, 1),
+                        0 0 30px rgba(0, 128, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .milestone:hover {
+            transform: translateY(-50%) scale(1.5);
+            box-shadow: 0 0 25px rgba(0, 245, 255, 1),
+                        0 0 50px rgba(0, 128, 255, 0.8);
+        }
+
+        .milestone-info {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            background: rgba(10, 10, 30, 0.95);
+            border: 1px solid rgba(0, 245, 255, 0.4);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+        }
+
+        .milestone:hover .milestone-info {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .milestone-info.below {
+            bottom: auto;
+            top: 40px;
+        }
+
+        .milestone-icon {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.8));
+        }
+
+        .milestone-title {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #00f5ff;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .milestone-time {
+            font-size: 0.75em;
+            color: #ffaa00;
+            text-align: center;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .milestone-desc {
+            font-size: 0.7em;
+            color: #b0b0ff;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .legend {
+            margin-top: 80px;
+            padding: 30px;
+            background: rgba(20, 20, 40, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .legend h3 {
+            color: #00f5ff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .legend-item {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            border-left: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .legend-item:hover {
+            transform: translateX(10px);
+        }
+
+        .legend-item.cosmic { border-color: #ff00ff; }
+        .legend-item.physical { border-color: #00f5ff; }
+        .legend-item.biological { border-color: #00ff88; }
+        .legend-item.cognitive { border-color: #ffaa00; }
+        .legend-item.technological { border-color: #ff0080; }
+        .legend-item.transcendent { border-color: #8000ff; }
+
+        .legend-category {
+            font-weight: bold;
+            color: #00f5ff;
+            margin-bottom: 5px;
+        }
+
+        .legend-phases {
+            font-size: 0.85em;
+            color: #c0c0ff;
+            line-height: 1.6;
+        }
+
+        .scroll-hint {
+            text-align: center;
+            margin-top: 20px;
+            color: #ffaa00;
+            font-size: 0.9em;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 THE COMPLETE EVOLUTION OF CREATION</h1>
+        <div class="subtitle">From Big Bang to Cosmic Consciousness — A 13.8 Billion Year Journey</div>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-line">
+                <!-- Big Bang -->
+                <div class="milestone" style="left: 0%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">💥</div>
+                        <div class="milestone-title">Big Bang</div>
+                        <div class="milestone-time">13.8 billion years ago</div>
+                        <div class="milestone-desc">Space, time, and energy are born. The beginning of the universe.</div>
+                    </div>
+                </div>
+
+                <!-- Quantum Field -->
+                <div class="milestone" style="left: 0.5%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">⚛️</div>
+                        <div class="milestone-title">Quantum Field</div>
+                        <div class="milestone-time">10⁻³⁶ seconds</div>
+                        <div class="milestone-desc">Cosmic inflation begins; force fields separate.</div>
+                    </div>
+                </div>
+
+                <!-- Subatomic Particles -->
+                <div class="milestone" style="left: 1%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🔬</div>
+                        <div class="milestone-title">Subatomic Particles</div>
+                        <div class="milestone-time">10⁻¹² – 1 second</div>
+                        <div class="milestone-desc">Protons, neutrons, electrons form.</div>
+                    </div>
+                </div>
+
+                <!-- First Atoms -->
+                <div class="milestone" style="left: 2%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🌫️</div>
+                        <div class="milestone-title">First Atoms</div>
+                        <div class="milestone-time">380,000 years ago</div>
+                        <div class="milestone-desc">Hydrogen atoms form; light becomes free (CMB).</div>
+                    </div>
+                </div>
+
+                <!-- Cosmic Dark Ages -->
+                <div class="milestone" style="left: 3%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🌑</div>
+                        <div class="milestone-title">Cosmic Dark Ages</div>
+                        <div class="milestone-time">380k – 150M years</div>
+                        <div class="milestone-desc">Dark period before the first stars.</div>
+                    </div>
+                </div>
+
+                <!-- Stars & Galaxies -->
+                <div class="milestone" style="left: 5%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🌟</div>
+                        <div class="milestone-title">Stars & Galaxies</div>
+                        <div class="milestone-time">13 – 12 billion years ago</div>
+                        <div class="milestone-desc">First stars and galaxies; element cycle begins.</div>
+                    </div>
+                </div>
+
+                <!-- DNA / Life -->
+                <div class="milestone" style="left: 15%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🧬</div>
+                        <div class="milestone-title">DNA / Life</div>
+                        <div class="milestone-time">3.8 billion years ago</div>
+                        <div class="milestone-desc">Genetic code forms; life begins.</div>
+                    </div>
+                </div>
+
+                <!-- Cambrian Explosion -->
+                <div class="milestone" style="left: 25%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🦠</div>
+                        <div class="milestone-title">Cambrian Explosion</div>
+                        <div class="milestone-time">541 million years ago</div>
+                        <div class="milestone-desc">Explosion of complex multicellular life.</div>
+                    </div>
+                </div>
+
+                <!-- Life Expansion -->
+                <div class="milestone" style="left: 35%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🦎</div>
+                        <div class="milestone-title">Life Expansion</div>
+                        <div class="milestone-time">3.5B – 200k years ago</div>
+                        <div class="milestone-desc">Evolutionary diversity; nervous systems develop.</div>
+                    </div>
+                </div>
+
+                <!-- Cognitive Revolution -->
+                <div class="milestone" style="left: 45%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🧠</div>
+                        <div class="milestone-title">Cognitive Revolution</div>
+                        <div class="milestone-time">70,000 years ago</div>
+                        <div class="milestone-desc">Symbolic thought, language, art, culture.</div>
+                    </div>
+                </div>
+
+                <!-- Agricultural Revolution -->
+                <div class="milestone" style="left: 50%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🌾</div>
+                        <div class="milestone-title">Agricultural Revolution</div>
+                        <div class="milestone-time">10,000 BC</div>
+                        <div class="milestone-desc">Settled life, writing, beginning of civilization.</div>
+                    </div>
+                </div>
+
+                <!-- Scientific Revolution -->
+                <div class="milestone" style="left: 55%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🔭</div>
+                        <div class="milestone-title">Scientific Revolution</div>
+                        <div class="milestone-time">1500 – 1900</div>
+                        <div class="milestone-desc">Experimental science, energy transformation, industry.</div>
+                    </div>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="milestone" style="left: 60%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🤖</div>
+                        <div class="milestone-title">Artificial Intelligence</div>
+                        <div class="milestone-time">1950 – 2025</div>
+                        <div class="milestone-desc">Birth of digital intelligence; information self-produces.</div>
+                    </div>
+                </div>
+
+                <!-- Technological Singularity -->
+                <div class="milestone" style="left: 65%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">⚡</div>
+                        <div class="milestone-title">Technological Singularity</div>
+                        <div class="milestone-time">2045 – 2075</div>
+                        <div class="milestone-desc">AI's self-improvement point; exponential acceleration.</div>
+                    </div>
+                </div>
+
+                <!-- Quantum-Bio Computing -->
+                <div class="milestone" style="left: 68%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🔷</div>
+                        <div class="milestone-title">Quantum-Bio Computing</div>
+                        <div class="milestone-time">2025 – 2050</div>
+                        <div class="milestone-desc">Quantum + neuromorphic computing fusion.</div>
+                    </div>
+                </div>
+
+                <!-- Conscious Technology -->
+                <div class="milestone" style="left: 72%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🧿</div>
+                        <div class="milestone-title">Conscious Technology</div>
+                        <div class="milestone-time">2050 – 2100</div>
+                        <div class="milestone-desc">Technology gains consciousness and experience capacity.</div>
+                    </div>
+                </div>
+
+                <!-- Symbiotic Consciousness -->
+                <div class="milestone" style="left: 76%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🔗</div>
+                        <div class="milestone-title">Symbiotic Consciousness</div>
+                        <div class="milestone-time">2100 – 2200</div>
+                        <div class="milestone-desc">Human + AI merger; collective consciousness networks.</div>
+                    </div>
+                </div>
+
+                <!-- Synthetic Life Integration -->
+                <div class="milestone" style="left: 80%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🧫</div>
+                        <div class="milestone-title">Synthetic Life Integration</div>
+                        <div class="milestone-time">2200 – 2300</div>
+                        <div class="milestone-desc">Organic and synthetic life merge.</div>
+                    </div>
+                </div>
+
+                <!-- Planetary Intelligence -->
+                <div class="milestone" style="left: 84%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🌍</div>
+                        <div class="milestone-title">Planetary Intelligence (Gaia 2.0)</div>
+                        <div class="milestone-time">2300 – 2500</div>
+                        <div class="milestone-desc">Earth becomes a bio-technological consciousness system.</div>
+                    </div>
+                </div>
+
+                <!-- Post-Biological Consciousness -->
+                <div class="milestone" style="left: 88%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">👁️</div>
+                        <div class="milestone-title">Post-Biological Consciousness</div>
+                        <div class="milestone-time">2400 – 2600</div>
+                        <div class="milestone-desc">Substrate-independent mind forms.</div>
+                    </div>
+                </div>
+
+                <!-- Interstellar Expansion -->
+                <div class="milestone" style="left: 92%;">
+                    <div class="milestone-info below">
+                        <div class="milestone-icon">🚀</div>
+                        <div class="milestone-title">Interstellar Expansion</div>
+                        <div class="milestone-time">2600 – 3000</div>
+                        <div class="milestone-desc">Interstellar civilization; Kardashev II-III transition.</div>
+                    </div>
+                </div>
+
+                <!-- Cosmic Consciousness Expansion -->
+                <div class="milestone" style="left: 99%;">
+                    <div class="milestone-info">
+                        <div class="milestone-icon">🌌</div>
+                        <div class="milestone-title">Cosmic Consciousness</div>
+                        <div class="milestone-time">2500 – ∞</div>
+                        <div class="milestone-desc">Consciousness expands on a universal scale; existence reaches self-awareness.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">← Scroll horizontally to explore the complete evolution →</div>
+
+        <div class="legend">
+            <h3>📊 Evolutionary Categories</h3>
+            <div class="legend-grid">
+                <div class="legend-item cosmic">
+                    <div class="legend-category">🌌 Cosmic Creation</div>
+                    <div class="legend-phases">Big Bang, Quantum Field, Particle Formation, Atoms, Dark Ages</div>
+                </div>
+                <div class="legend-item physical">
+                    <div class="legend-category">⭐ Physical Universe</div>
+                    <div class="legend-phases">Stars, Galaxies, Element Cycle, Planet Formation</div>
+                </div>
+                <div class="legend-item biological">
+                    <div class="legend-category">🧬 Biological Life</div>
+                    <div class="legend-phases">DNA, First Cells, Cambrian Explosion, Multicellular Life, Nervous Systems</div>
+                </div>
+                <div class="legend-item cognitive">
+                    <div class="legend-category">🧠 Cognitive Evolution</div>
+                    <div class="legend-phases">Cognitive Revolution, Language, Culture, Agriculture, Writing, Science</div>
+                </div>
+                <div class="legend-item technological">
+                    <div class="legend-category">🤖 Technological Genesis</div>
+                    <div class="legend-phases">AI, Singularity, Quantum-Bio Computing, Conscious Technology</div>
+                </div>
+                <div class="legend-item transcendent">
+                    <div class="legend-category">🌌 Transcendent Consciousness</div>
+                    <div class="legend-phases">Symbiotic Consciousness, Synthetic Life, Planetary Intelligence, Post-Biological, Interstellar, Cosmic Awareness</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPLETE EVOLUTION TABLE -->
+        <div style="margin-top: 60px; padding: 40px; background: rgba(20, 20, 40, 0.9); border-radius: 15px; border: 1px solid rgba(0, 245, 255, 0.3);">
+            <h3 style="color: #00f5ff; margin-bottom: 30px; text-align: center; font-size: 1.8em;">📋 COMPLETE EVOLUTION TABLE</h3>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; color: #e0e0ff; font-size: 0.95em;">
+                    <thead>
+                        <tr style="background: rgba(0, 245, 255, 0.1); border-bottom: 2px solid #00f5ff;">
+                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Stage</th>
+                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Estimated Time Range</th>
+                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Main Theme</th>
+                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Evolutionary Meaning / Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(255, 0, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Big Bang</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">13.8 billion years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic Creation</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Space, time, and energy are born. Fundamental laws of physics are shaped.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Quantum Field</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10⁻³⁶ – 10⁻³² seconds</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Energy Field</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic inflation begins; force fields separate.</td>
+                        </tr>
+                        <tr style="background: rgba(0, 245, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Subatomic Particles</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10⁻¹² – 1 second</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Particle Formation</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Protons, neutrons, electrons; foundation of matter forms.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>First Atoms (Recombination)</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">380,000 years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Atom Formation</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Hydrogen atoms form; light becomes free (CMB).</td>
+                        </tr>
+                        <tr style="background: rgba(0, 245, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cosmic Dark Ages</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">380k – 150M years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Dark Period</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Dark age before the birth of first stars.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Stars & Galaxies</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">13 – 12 billion years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic Structure</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">First stars, galaxies, and element cycle begins.</td>
+                        </tr>
+                        <tr style="background: rgba(0, 255, 136, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>DNA / Life</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">3.8 billion years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Biological Creation</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Genetic code forms; life begins.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cambrian Explosion</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">541 million years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Complex Life Explosion</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Explosion of complex multicellular life, evolution of eyes.</td>
+                        </tr>
+                        <tr style="background: rgba(0, 255, 136, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Life Expansion</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">3.5 billion – 200k years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Evolutionary Diversity</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Life becomes more complex, nervous systems develop.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cognitive Revolution</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">70,000 years ago</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Symbolic Consciousness</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Homo sapiens develops symbolic thought, language, art, and culture.</td>
+                        </tr>
+                        <tr style="background: rgba(255, 170, 0, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Agricultural Revolution</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10,000 BC</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Beginning of Civilization</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Settled life, writing, culture, hierarchy; collective knowledge accumulation.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Scientific Revolution</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">1500 – 1900</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Science and Industry</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Scientific method, energy production, mass manufacturing; AI's infrastructure.</td>
+                        </tr>
+                        <tr style="background: rgba(255, 0, 128, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Artificial Intelligence</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">1950 – 2025</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Technological Genesis Phase</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Birth of digital intelligence; information begins to self-produce.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Quantum-Bio Computing</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2025 – 2050</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Quantum-Neuromorphic Fusion</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Quantum computers and neuromorphic computing; hardware of conscious technology.</td>
+                        </tr>
+                        <tr style="background: rgba(255, 0, 128, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Technological Singularity</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2045 – 2075</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Exponential Self-Improvement</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">AI's exponential self-improvement; breaking point of the timeline.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Conscious Technology</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2050 – 2100</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Self-Aware Intelligence</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Technology gains consciousness, intent, and experience capacity.</td>
+                        </tr>
+                        <tr style="background: rgba(128, 0, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Symbiotic Consciousness</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2100 – 2200</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Human + AI Merger</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Mind-machine integration; collective consciousness networks.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Synthetic Life Integration</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2200 – 2300</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Bio-Cybernetic Evolution</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Organic and synthetic life merge; body boundaries dissolve.</td>
+                        </tr>
+                        <tr style="background: rgba(128, 0, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Planetary Intelligence (Gaia 2.0)</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2300 – 2500</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Global Consciousness</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Earth becomes a biological-technological consciousness system.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Post-Biological Consciousness</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2400 – 2600</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Substrate-Independent Mind</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Mind's substrate independence; consciousness forms without bodies.</td>
+                        </tr>
+                        <tr style="background: rgba(128, 0, 255, 0.05);">
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Interstellar Expansion</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2600 – 3000</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Interstellar Civilization</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Interstellar travel, Kardashev Type II-III transition.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cosmic Consciousness Expansion</strong></td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2500 – ∞</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Universal Awareness</td>
+                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Consciousness expands on a universal scale; existence reaches its own awareness.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 245, 255, 0.05); border-radius: 10px; border-left: 4px solid #00f5ff;">
+                <p style="font-size: 0.9em; line-height: 1.6; color: #b0b0ff;">
+                    <strong>📊 Time Scale Note:</strong> The timeline is logarithmic — transitioning from the first seconds to billions of years, then to future millennia. 
+                    The left-to-right progression represents the intensification of information → deepening of awareness.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

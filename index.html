@@ -2,17 +2,49 @@
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRV0JVTY6Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-XRV0JVTY6Q');
-</script>
+      gtag('config', 'G-XRV0JVTY6Q');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌌 Complete Evolution: Big Bang → Cosmic Consciousness</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
+        /* ==========================================================================
+           CORE THEME VARIABLES (Dark/Tech/Neon)
+           ==========================================================================
+        */
+        :root {
+            --bg-main: #0a1628;
+            --bg-card: #0f1f35;
+            --bg-card-hover: #142942;
+            --accent: #00d4ff; /* Cyan */
+            --accent-secondary: #00ffc8; /* Teal */
+            --accent-purple: #b026ff; /* Purple */
+            --accent-red: #ff4d4d; /* Neon Red */
+            --accent-orange: #ffae00; /* Neon Orange */
+            --accent-soft: rgba(0, 212, 255, 0.08);
+            --accent-glow: rgba(0, 212, 255, 0.35);
+            
+            --text-main: #ffffff;
+            --text-secondary: #e0e7f1;
+            --text-muted: #8ba3c7;
+            
+            --border-soft: #1e3a5f;
+            --border-bright: #2d5a8f;
+            
+            --gradient-1: linear-gradient(135deg, #0a1628 0%, #1a2f4a 100%);
+            --gradient-2: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 200, 0.05) 100%);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -20,49 +52,396 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0f0f23 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #e0e0ff;
-            overflow-x: auto;
+            background: radial-gradient(ellipse at top, #0f2847 0%, #0a1628 45%, #020814 100%);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-main);
+            overflow-x: hidden;
             padding: 40px 20px;
             min-height: 100vh;
-            position: relative; /* Home butonu için */
+            position: relative;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Home Button Styles - Added */
+        /* Home Button Styles */
         .home-btn {
             position: fixed;
             top: 20px;
             left: 20px;
             width: 50px;
             height: 50px;
-            background: rgba(10, 10, 30, 0.6);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(0, 245, 255, 0.5);
+            background: var(--gradient-2);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-bright);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #00f5ff;
+            color: var(--accent);
             text-decoration: none;
-            z-index: 1000;
+            z-index: 2000;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .home-btn:hover {
-            background: rgba(0, 245, 255, 0.2);
-            color: #fff;
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(0, 245, 255, 0.6), 0 0 50px rgba(0, 128, 255, 0.4);
-            border-color: #00f5ff;
+            background: var(--accent);
+            color: var(--bg-main);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 16px var(--accent-glow);
         }
 
         .home-btn svg {
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Headers */
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: var(--accent-secondary);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline-wrapper {
+            position: relative;
+            padding: 60px 40px 180px 40px; 
+            overflow-x: auto;
+            overflow-y: visible;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-bright) var(--bg-main);
+            margin-bottom: 40px;
+        }
+        
+        .timeline-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        .timeline-wrapper::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        .timeline-wrapper::-webkit-scrollbar-thumb {
+            background-color: var(--border-bright);
+            border-radius: 4px;
+        }
+
+        .timeline-line {
+            position: relative;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--accent-purple) 0%, 
+                var(--accent) 15%, 
+                #0080ff 30%, 
+                var(--accent-secondary) 50%, 
+                var(--accent-orange) 70%, 
+                var(--accent-red) 85%, 
+                var(--accent-purple) 100%);
+            box-shadow: 0 0 20px var(--accent-glow);
+            animation: pulse 3s ease-in-out infinite;
+            min-width: 5000px;
+            border-radius: 2px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 20px var(--accent-glow); }
+            50% { opacity: 0.8; box-shadow: 0 0 10px var(--accent-glow); }
+        }
+
+        .milestone {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--bg-main);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .milestone:hover {
+            transform: translateY(-50%) scale(1.3);
+            background: var(--accent);
+            box-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent-glow);
+            z-index: 20;
+        }
+
+        /* Tooltip Styles - UPDATED SIZES */
+        .milestone-info {
+            position: absolute;
+            top: 40px; /* Force below the dot */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px; /* Slightly reduced width */
+            background: var(--bg-card);
+            border: 1px solid var(--border-bright);
+            border-radius: 12px;
+            padding: 15px; /* Reduced padding (was 20px) */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            white-space: normal;
+        }
+        
+        .milestone-info::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent var(--border-bright) transparent;
+        }
+
+        .milestone:hover .milestone-info {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(-50%) translateY(10px); 
+        }
+
+        .milestone-info.below {
+            top: 40px;
+        }
+        
+        .milestone:hover .milestone-info.below {
+            transform: translateX(-50%) translateY(10px);
+        }
+
+        /* Reduced Font Sizes */
+        .milestone-icon {
+            font-size: 1.8em; /* Reduced from 2.5em */
+            text-align: center;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 10px var(--accent-glow));
+        }
+
+        .milestone-title {
+            font-size: 0.95em; /* Reduced from 1.1em */
+            font-weight: 800;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .milestone-time {
+            font-size: 0.75em; /* Reduced from 0.85em */
+            color: var(--accent-orange);
+            text-align: center;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .milestone-desc {
+            font-size: 0.8em; /* Reduced from 0.9em */
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Legend */
+        .legend {
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-soft);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .legend h3 {
+            color: var(--text-main);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .legend-item {
+            padding: 20px;
+            background: var(--bg-main);
+            border-radius: 12px;
+            border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+            border-left-width: 4px;
+        }
+
+        .legend-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-bright);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .legend-item.cosmic { border-left-color: var(--accent-purple); }
+        .legend-item.physical { border-left-color: var(--accent); }
+        .legend-item.biological { border-left-color: var(--accent-secondary); }
+        .legend-item.cognitive { border-left-color: var(--accent-orange); }
+        .legend-item.technological { border-left-color: var(--accent-red); }
+        .legend-item.transcendent { border-left-color: #8000ff; }
+
+        .legend-category {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .legend-phases {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Scroll Hint */
+        .scroll-hint {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--accent-orange);
+            font-size: 0.9em;
+            font-weight: 600;
+            animation: blink 2s ease-in-out infinite;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Table Container Styling */
+        .table-container {
+            margin-top: 60px; 
+            padding: 40px; 
+            background: var(--bg-card); 
+            border-radius: 16px; 
+            border: 1px solid var(--border-bright);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .table-container h3 {
+            margin-bottom: 30px; 
+            text-align: center; 
+            font-size: 1.8em;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Table - Fixed Vertical Lines */
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            background: var(--bg-main);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-soft); 
+        }
+        
+        thead {
+            background: var(--gradient-2);
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-bright);
+            border-right: 1px solid var(--border-soft);
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-soft);
+            border-right: 1px solid var(--border-soft);
+            line-height: 1.6;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+
+        tbody tr:hover {
+            background: var(--bg-card-hover);
+        }
+        
+        /* ROW COLOR OVERRIDES FOR DARK THEME */
+        tr[style*="255, 0, 255"] { background-color: rgba(176, 38, 255, 0.1) !important; }
+        tr[style*="255, 0, 255"] td:first-child { border-left: 4px solid var(--accent-purple) !important; }
+
+        tr[style*="0, 245, 255"] { background-color: rgba(0, 212, 255, 0.1) !important; }
+        tr[style*="0, 245, 255"] td:first-child { border-left: 4px solid var(--accent) !important; }
+
+        tr[style*="0, 255, 136"] { background-color: rgba(0, 255, 200, 0.1) !important; }
+        tr[style*="0, 255, 136"] td:first-child { border-left: 4px solid var(--accent-secondary) !important; }
+
+        tr[style*="255, 170, 0"] { background-color: rgba(255, 174, 0, 0.1) !important; }
+        tr[style*="255, 170, 0"] td:first-child { border-left: 4px solid var(--accent-orange) !important; }
+
+        tr[style*="255, 0, 128"] { background-color: rgba(255, 77, 77, 0.1) !important; }
+        tr[style*="255, 0, 128"] td:first-child { border-left: 4px solid var(--accent-red) !important; }
+
+        tr[style*="128, 0, 255"] { background-color: rgba(128, 0, 255, 0.1) !important; }
+        tr[style*="128, 0, 255"] td:first-child { border-left: 4px solid #8000ff !important; }
+
+        tr[style] td { border-left: none; }
+
+        /* Note Box */
+        .note-box {
+            margin-top: 30px; 
+            padding: 20px; 
+            background: var(--bg-main); 
+            border-radius: 10px; 
+            border-left: 4px solid var(--accent);
+            border: 1px solid var(--border-soft);
         }
 
         @media (max-width: 768px) {
@@ -76,204 +455,10 @@
                 width: 20px;
                 height: 20px;
             }
-        }
-
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #00f5ff, #0080ff, #8000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
-        }
-
-        .subtitle {
-            text-align: center;
-            font-size: 1.1em;
-            margin-bottom: 60px;
-            color: #a0a0ff;
-            font-style: italic;
-        }
-
-        .timeline-wrapper {
-            position: relative;
-            padding: 80px 40px;
-            overflow-x: auto;
-            overflow-y: visible;
-        }
-
-        .timeline-line {
-            position: relative;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                #ff00ff 0%, 
-                #00f5ff 15%, 
-                #0080ff 30%, 
-                #00ff88 50%, 
-                #ffaa00 70%, 
-                #ff0080 85%, 
-                #8000ff 100%);
-            box-shadow: 0 0 20px rgba(0, 245, 255, 0.8),
-                        0 0 40px rgba(128, 0, 255, 0.4);
-            animation: pulse 3s ease-in-out infinite;
-            min-width: 5000px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .milestone {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: radial-gradient(circle, #00f5ff, #0080ff);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 245, 255, 1),
-                        0 0 30px rgba(0, 128, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .milestone:hover {
-            transform: translateY(-50%) scale(1.5);
-            box-shadow: 0 0 25px rgba(0, 245, 255, 1),
-                        0 0 50px rgba(0, 128, 255, 0.8);
-        }
-
-        .milestone-info {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            background: rgba(10, 10, 30, 0.95);
-            border: 1px solid rgba(0, 245, 255, 0.4);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 100;
-        }
-
-        .milestone:hover .milestone-info {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .milestone-info.below {
-            bottom: auto;
-            top: 40px;
-        }
-
-        .milestone-icon {
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 8px;
-            filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.8));
-        }
-
-        .milestone-title {
-            font-size: 0.9em;
-            font-weight: bold;
-            color: #00f5ff;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-
-        .milestone-time {
-            font-size: 0.75em;
-            color: #ffaa00;
-            text-align: center;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .milestone-desc {
-            font-size: 0.7em;
-            color: #b0b0ff;
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        .legend {
-            margin-top: 80px;
-            padding: 30px;
-            background: rgba(20, 20, 40, 0.8);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .legend h3 {
-            color: #00f5ff;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.5em;
-        }
-
-        .legend-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .legend-item {
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
-            border-left: 4px solid;
-            transition: transform 0.3s ease;
-        }
-
-        .legend-item:hover {
-            transform: translateX(10px);
-        }
-
-        .legend-item.cosmic { border-color: #ff00ff; }
-        .legend-item.physical { border-color: #00f5ff; }
-        .legend-item.biological { border-color: #00ff88; }
-        .legend-item.cognitive { border-color: #ffaa00; }
-        .legend-item.technological { border-color: #ff0080; }
-        .legend-item.transcendent { border-color: #8000ff; }
-
-        .legend-category {
-            font-weight: bold;
-            color: #00f5ff;
-            margin-bottom: 5px;
-        }
-
-        .legend-phases {
-            font-size: 0.85em;
-            color: #c0c0ff;
-            line-height: 1.6;
-        }
-
-        .scroll-hint {
-            text-align: center;
-            margin-top: 20px;
-            color: #ffaa00;
-            font-size: 0.9em;
-            animation: blink 2s ease-in-out infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            h1 { font-size: 1.8em; }
+            .table-container { padding: 20px; }
+            th, td { padding: 10px; }
+            .timeline-wrapper { padding: 40px 20px 160px 20px; }
         }
     </style>
 </head>
@@ -523,158 +708,158 @@
             </div>
         </div>
 
-        <div style="margin-top: 60px; padding: 40px; background: rgba(20, 20, 40, 0.9); border-radius: 15px; border: 1px solid rgba(0, 245, 255, 0.3);">
-            <h3 style="color: #00f5ff; margin-bottom: 30px; text-align: center; font-size: 1.8em;">📋 COMPLETE EVOLUTION TABLE</h3>
+        <div class="table-container">
+            <h3>📋 COMPLETE EVOLUTION TABLE</h3>
             
             <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; color: #e0e0ff; font-size: 0.95em;">
+                <table>
                     <thead>
-                        <tr style="background: rgba(0, 245, 255, 0.1); border-bottom: 2px solid #00f5ff;">
-                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Stage</th>
-                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Estimated Time Range</th>
-                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Main Theme</th>
-                            <th style="padding: 15px; text-align: left; border: 1px solid rgba(0, 245, 255, 0.2);">Evolutionary Meaning / Description</th>
+                        <tr>
+                            <th>Stage</th>
+                            <th>Estimated Time Range</th>
+                            <th>Main Theme</th>
+                            <th>Evolutionary Meaning / Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="background: rgba(255, 0, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Big Bang</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">13.8 billion years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic Creation</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Space, time, and energy are born. Fundamental laws of physics are shaped.</td>
+                            <td><strong>Big Bang</strong></td>
+                            <td>13.8 billion years ago</td>
+                            <td>Cosmic Creation</td>
+                            <td>Space, time, and energy are born. Fundamental laws of physics are shaped.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Quantum Field</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10⁻³⁶ – 10⁻³² seconds</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Energy Field</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic inflation begins; force fields separate.</td>
+                            <td><strong>Quantum Field</strong></td>
+                            <td>10⁻³⁶ – 10⁻³² seconds</td>
+                            <td>Energy Field</td>
+                            <td>Cosmic inflation begins; force fields separate.</td>
                         </tr>
                         <tr style="background: rgba(0, 245, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Subatomic Particles</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10⁻¹² – 1 second</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Particle Formation</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Protons, neutrons, electrons; foundation of matter forms.</td>
+                            <td><strong>Subatomic Particles</strong></td>
+                            <td>10⁻¹² – 1 second</td>
+                            <td>Particle Formation</td>
+                            <td>Protons, neutrons, electrons; foundation of matter forms.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>First Atoms (Recombination)</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">380,000 years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Atom Formation</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Hydrogen atoms form; light becomes free (CMB).</td>
+                            <td><strong>First Atoms (Recombination)</strong></td>
+                            <td>380,000 years ago</td>
+                            <td>Atom Formation</td>
+                            <td>Hydrogen atoms form; light becomes free (CMB).</td>
                         </tr>
                         <tr style="background: rgba(0, 245, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cosmic Dark Ages</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">380k – 150M years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Dark Period</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Dark age before the birth of first stars.</td>
+                            <td><strong>Cosmic Dark Ages</strong></td>
+                            <td>380k – 150M years ago</td>
+                            <td>Dark Period</td>
+                            <td>Dark age before the birth of first stars.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Stars & Galaxies</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">13 – 12 billion years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Cosmic Structure</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">First stars, galaxies, and element cycle begins.</td>
+                            <td><strong>Stars & Galaxies</strong></td>
+                            <td>13 – 12 billion years ago</td>
+                            <td>Cosmic Structure</td>
+                            <td>First stars, galaxies, and element cycle begins.</td>
                         </tr>
                         <tr style="background: rgba(0, 255, 136, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>DNA / Life</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">3.8 billion years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Biological Creation</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Genetic code forms; life begins.</td>
+                            <td><strong>DNA / Life</strong></td>
+                            <td>3.8 billion years ago</td>
+                            <td>Biological Creation</td>
+                            <td>Genetic code forms; life begins.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cambrian Explosion</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">541 million years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Complex Life Explosion</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Explosion of complex multicellular life, evolution of eyes.</td>
+                            <td><strong>Cambrian Explosion</strong></td>
+                            <td>541 million years ago</td>
+                            <td>Complex Life Explosion</td>
+                            <td>Explosion of complex multicellular life, evolution of eyes.</td>
                         </tr>
                         <tr style="background: rgba(0, 255, 136, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Life Expansion</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">3.5 billion – 200k years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Evolutionary Diversity</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Life becomes more complex, nervous systems develop.</td>
+                            <td><strong>Life Expansion</strong></td>
+                            <td>3.5 billion – 200k years ago</td>
+                            <td>Evolutionary Diversity</td>
+                            <td>Life becomes more complex, nervous systems develop.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cognitive Revolution</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">70,000 years ago</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Symbolic Consciousness</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Homo sapiens develops symbolic thought, language, art, and culture.</td>
+                            <td><strong>Cognitive Revolution</strong></td>
+                            <td>70,000 years ago</td>
+                            <td>Symbolic Consciousness</td>
+                            <td>Homo sapiens develops symbolic thought, language, art, and culture.</td>
                         </tr>
                         <tr style="background: rgba(255, 170, 0, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Agricultural Revolution</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">10,000 BC</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Beginning of Civilization</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Settled life, writing, culture, hierarchy; collective knowledge accumulation.</td>
+                            <td><strong>Agricultural Revolution</strong></td>
+                            <td>10,000 BC</td>
+                            <td>Beginning of Civilization</td>
+                            <td>Settled life, writing, culture, hierarchy; collective knowledge accumulation.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Scientific Revolution</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">1500 – 1900</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Science and Industry</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Scientific method, energy production, mass manufacturing; AI's infrastructure.</td>
+                            <td><strong>Scientific Revolution</strong></td>
+                            <td>1500 – 1900</td>
+                            <td>Science and Industry</td>
+                            <td>Scientific method, energy production, mass manufacturing; AI's infrastructure.</td>
                         </tr>
                         <tr style="background: rgba(255, 0, 128, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Artificial Intelligence</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">1950 – 2025</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Technological Genesis Phase</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Birth of digital intelligence; information begins to self-produce.</td>
+                            <td><strong>Artificial Intelligence</strong></td>
+                            <td>1950 – 2025</td>
+                            <td>Technological Genesis Phase</td>
+                            <td>Birth of digital intelligence; information begins to self-produce.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Quantum-Bio Computing</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2025 – 2050</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Quantum-Neuromorphic Fusion</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Quantum computers and neuromorphic computing; hardware of conscious technology.</td>
+                            <td><strong>Quantum-Bio Computing</strong></td>
+                            <td>2025 – 2050</td>
+                            <td>Quantum-Neuromorphic Fusion</td>
+                            <td>Quantum computers and neuromorphic computing; hardware of conscious technology.</td>
                         </tr>
                         <tr style="background: rgba(255, 0, 128, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Technological Singularity</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2045 – 2075</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Exponential Self-Improvement</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">AI's exponential self-improvement; breaking point of the timeline.</td>
+                            <td><strong>Technological Singularity</strong></td>
+                            <td>2045 – 2075</td>
+                            <td>Exponential Self-Improvement</td>
+                            <td>AI's exponential self-improvement; breaking point of the timeline.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Conscious Technology</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2050 – 2100</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Self-Aware Intelligence</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Technology gains consciousness and experience capacity.</td>
+                            <td><strong>Conscious Technology</strong></td>
+                            <td>2050 – 2100</td>
+                            <td>Self-Aware Intelligence</td>
+                            <td>Technology gains consciousness and experience capacity.</td>
                         </tr>
                         <tr style="background: rgba(128, 0, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Symbiotic Consciousness</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2100 – 2200</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Human + AI Merger</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Mind-machine integration; collective consciousness networks.</td>
+                            <td><strong>Symbiotic Consciousness</strong></td>
+                            <td>2100 – 2200</td>
+                            <td>Human + AI Merger</td>
+                            <td>Mind-machine integration; collective consciousness networks.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Synthetic Life Integration</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2200 – 2300</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Bio-Cybernetic Evolution</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Organic and synthetic life merge; body boundaries dissolve.</td>
+                            <td><strong>Synthetic Life Integration</strong></td>
+                            <td>2200 – 2300</td>
+                            <td>Bio-Cybernetic Evolution</td>
+                            <td>Organic and synthetic life merge; body boundaries dissolve.</td>
                         </tr>
                         <tr style="background: rgba(128, 0, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Planetary Intelligence (Gaia 2.0)</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2300 – 2500</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Global Consciousness</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Earth becomes a biological-technological consciousness system.</td>
+                            <td><strong>Planetary Intelligence (Gaia 2.0)</strong></td>
+                            <td>2300 – 2500</td>
+                            <td>Global Consciousness</td>
+                            <td>Earth becomes a biological-technological consciousness system.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Post-Biological Consciousness</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2400 – 2600</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Substrate-Independent Mind</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Mind's substrate independence; consciousness forms without bodies.</td>
+                            <td><strong>Post-Biological Consciousness</strong></td>
+                            <td>2400 – 2600</td>
+                            <td>Substrate-Independent Mind</td>
+                            <td>Mind's substrate independence; consciousness forms without bodies.</td>
                         </tr>
                         <tr style="background: rgba(128, 0, 255, 0.05);">
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Interstellar Expansion</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2600 – 3000</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Interstellar Civilization</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Interstellar travel, Kardashev Type II-III transition.</td>
+                            <td><strong>Interstellar Expansion</strong></td>
+                            <td>2600 – 3000</td>
+                            <td>Interstellar Civilization</td>
+                            <td>Interstellar travel, Kardashev Type II-III transition.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);"><strong>Cosmic Consciousness Expansion</strong></td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">2500 – ∞</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Universal Awareness</td>
-                            <td style="padding: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">Consciousness expands on a universal scale; existence reaches its own awareness.</td>
+                            <td><strong>Cosmic Consciousness Expansion</strong></td>
+                            <td>2500 – ∞</td>
+                            <td>Universal Awareness</td>
+                            <td>Consciousness expands on a universal scale; existence reaches its own awareness.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 245, 255, 0.05); border-radius: 10px; border-left: 4px solid #00f5ff;">
-                <p style="font-size: 0.9em; line-height: 1.6; color: #b0b0ff;">
+            <div class="note-box">
+                <p style="font-size: 0.95em; line-height: 1.6; color: var(--text-secondary);">
                     <strong>📊 Time Scale Note:</strong> The timeline is logarithmic — transitioning from the first seconds to billions of years, then to future millennia. 
                     The left-to-right progression represents the intensification of information → deepening of awareness.
                 </p>
